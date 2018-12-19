@@ -30,15 +30,15 @@ using UIKit;
 
 namespace Microsoft.Identity.Client.Platforms.iOS.EmbeddedWebview
 {
-    [Foundation.Register("UniversalView")]
-    internal class UniversalView : UIView
+    [Foundation.Register("MsalUniversalView")]
+    internal class MsalUniversalView : UIView
     {
-        public UniversalView()
+        public MsalUniversalView()
         {
             Initialize();
         }
 
-        public UniversalView(CGRect bounds)
+        public MsalUniversalView(CGRect bounds)
             : base(bounds)
         {
             Initialize();
