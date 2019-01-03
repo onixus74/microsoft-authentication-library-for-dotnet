@@ -50,8 +50,8 @@ namespace Microsoft.Identity.Client.Platforms.iOS.EmbeddedWebview
         }
     }
 
-    [Foundation.Register("AuthenticationAgentUINavigationController")]
-    internal class AuthenticationAgentUINavigationController : UINavigationController
+    [Foundation.Register("MsalAuthenticationAgentUINavigationController")]
+    internal class MsalAuthenticationAgentUINavigationController : UINavigationController
     {
         private readonly string url;
         private readonly string callback;
@@ -60,7 +60,7 @@ namespace Microsoft.Identity.Client.Platforms.iOS.EmbeddedWebview
 
         private readonly UIStatusBarStyle preferredStatusBarStyle;
 
-        public AuthenticationAgentUINavigationController(string url, string callback, AuthenticationAgentUIViewController.ReturnCodeCallback callbackMethod, UIStatusBarStyle preferredStatusBarStyle)
+        public MsalAuthenticationAgentUINavigationController(string url, string callback, AuthenticationAgentUIViewController.ReturnCodeCallback callbackMethod, UIStatusBarStyle preferredStatusBarStyle)
         {
             this.url = url;
             this.callback = callback;
