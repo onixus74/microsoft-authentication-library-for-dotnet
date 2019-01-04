@@ -140,7 +140,7 @@ namespace Microsoft.Identity.Test.UIAutomation
             var labData = LabUserHelper.GetDefaultUser();
 
             // 1. Acquire token with uiBehavior set to consent 
-            _msalMobileTestHelper.AcquireTokenInteractiveTestHelper(
+            _msalMobileTestHelper.AcquireTokenInteractiveWithConsentTest(
                 xamarinController,
                 labData,
                 CoreUiTestConstants.UiBehaviorConsent);

@@ -54,6 +54,33 @@ namespace Microsoft.Identity.Test.UIAutomation
             CoreMobileTestHelper.VerifyResult(controller);
         }
 
+        public void AcquireTokenInteractiveWithConsentTest(
+            ITestController controller,
+            LabResponse labResponse,
+            string promptBehavior = CoreUiTestConstants.UiBehaviorLogin)
+        {
+            PrepareForAuthentication(controller);
+            SetInputData(controller, labResponse.AppId, CoreUiTestConstants.DefaultScope, promptBehavior);
+
+            //Acquire token flow
+            controller.Tap(CoreUiTestConstants.AcquireTokenId);
+
+            //i0116 = UPN text field on AAD sign in endpoint
+            controller.Tap(labResponse.User.Upn, XamarinSelector.ByHtmlValue);
+
+            // on consent, also hit the accept button
+            if (promptBehavior == CoreUiTestConstants.UiBehaviorConsent)
+            {
+                AppWebResult consentHeader = controller.WaitForWebElementByCssId("consentHeader").FirstOrDefault();
+                Assert.IsNotNull(consentHeader);
+                Assert.IsTrue(consentHeader.TextContent.Contains("Permissions requested"));
+
+                controller.Tap(CoreUiTestConstants.WebSubmitId, XamarinSelector.ByHtmlIdAttribute);
+            }
+
+            CoreMobileTestHelper.VerifyResult(controller);
+        }
+
         /// <summary>
         /// Runs through the standard acquire token silent flow
         /// </summary>
