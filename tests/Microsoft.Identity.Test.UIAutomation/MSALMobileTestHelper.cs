@@ -356,7 +356,7 @@ namespace Microsoft.Identity.Test.UIAutomation
 
         public void PerformB2CSelectProviderOnlyFlow(ITestController controller, LabUser user, B2CIdentityProvider b2CIdentityProvider, bool isB2CLoginAuthority)
         {
-            SetB2CAuthority(controller, true);
+            SetB2CAuthority(controller, isB2CLoginAuthority);
             
             controller.Tap(CoreUiTestConstants.AcquirePageId);
 
