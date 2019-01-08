@@ -196,7 +196,8 @@ namespace Microsoft.Identity.Test.UIAutomation
         /// </summary>
         public void B2CFacebookEditPolicyAcquireTokenTest()
         {
-            _msalMobileTestHelper.B2CFacebookAcquireTokenSilentTest(xamarinController, LabUserHelper.GetB2CFacebookAccount(), true);
+            _msalMobileTestHelper.PerformB2CSelectProviderOnlyFlow(xamarinController, LabUserHelper.GetB2CFacebookAccount().User, B2CIdentityProvider.Facebook, true);
+            _msalMobileTestHelper.B2CSilentFlowHelper(xamarinController);
             _msalMobileTestHelper.B2CFacebookEditPolicyAcquireTokenInteractiveTestHelper(xamarinController);
         }
 
