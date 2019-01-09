@@ -30,7 +30,7 @@ using Foundation;
 
 // TODO: bogavril - test if this can be removed and resolve the obsolete calls
 #if MAC
-using INSUrlProtocolClient = Foundation.NSUrlProtocolClient;
+// using INSUrlProtocolClient = Foundation.NSUrlProtocolClient;
 #endif
 
 namespace Microsoft.Identity.Client.Platforms.AppleShared
@@ -89,9 +89,9 @@ namespace Microsoft.Identity.Client.Platforms.AppleShared
 
             public CoreCustomConnectionDelegate(CoreCustomUrlProtocol handler)
             {
-                this.handler = handler;
+                this.handler = handler;                
 #if MAC
-                client = (INSUrlProtocolClient)handler.WeakClient;
+                client = (INSUrlProtocolClient)handler.Client;
 #else
                 client = handler.Client;
 #endif
