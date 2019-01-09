@@ -56,11 +56,11 @@ namespace Microsoft.Identity.Client.Platforms.iOS.EmbeddedWebview
         private readonly string url;
         private readonly string callback;
 
-        private readonly AuthenticationAgentUIViewController.ReturnCodeCallback callbackMethod;
+        private readonly MsalAuthenticationAgentUIViewController.ReturnCodeCallback callbackMethod;
 
         private readonly UIStatusBarStyle preferredStatusBarStyle;
 
-        public MsalAuthenticationAgentUINavigationController(string url, string callback, AuthenticationAgentUIViewController.ReturnCodeCallback callbackMethod, UIStatusBarStyle preferredStatusBarStyle)
+        public MsalAuthenticationAgentUINavigationController(string url, string callback, MsalAuthenticationAgentUIViewController.ReturnCodeCallback callbackMethod, UIStatusBarStyle preferredStatusBarStyle)
         {
             this.url = url;
             this.callback = callback;
@@ -81,7 +81,7 @@ namespace Microsoft.Identity.Client.Platforms.iOS.EmbeddedWebview
             base.ViewDidLoad();
 
             // Perform any additional setup after loading the view
-            this.PushViewController(new AuthenticationAgentUIViewController(this.url, this.callback, this.callbackMethod), true);
+            this.PushViewController(new MsalAuthenticationAgentUIViewController(this.url, this.callback, this.callbackMethod), true);
         }
 
         public override UIStatusBarStyle PreferredStatusBarStyle()
