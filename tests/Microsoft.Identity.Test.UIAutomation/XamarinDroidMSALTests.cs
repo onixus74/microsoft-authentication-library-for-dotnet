@@ -90,7 +90,7 @@ namespace Microsoft.Identity.Test.UIAutomation
                 //B2CGoogleB2CLoginAuthorityAcquireTokenTest,
                 //B2CGoogleMicrosoftAuthorityAcquireTokenTest,
                 B2CLocalAccountAcquireTokenTest,
-                B2CLocalAccountAcquireTokenWithMicrosoftAuthorityTest,
+                //B2CLocalAccountAcquireTokenWithMicrosoftAuthorityTest,
                 B2CFacebookEditPolicyAcquireTokenTest
             };
 
